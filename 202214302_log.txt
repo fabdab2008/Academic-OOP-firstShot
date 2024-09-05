@@ -1,0 +1,149 @@
+Line No: 1 Token <INT> Lexeme int found.
+Line No: 1 Token <ID> Lexeme main found.
+0-><main><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 1 Token <LPAREN> Lexeme ( found.
+Line No: 1 Token <RPAREN> Lexeme ) found.
+Line No: 1 Token <LCURL> Lexeme { found.
+Line No: 2 Token <INT> Lexeme int found.
+Line No: 2 Token <ID> Lexeme a found.
+0-><main><ID> ,-><a><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 2 Token <COMMA> Lexeme , found.
+Line No: 2 Token <ID> Lexeme b found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 2 Token <COMMA> Lexeme , found.
+Line No: 2 Token <ID> Lexeme abdc1 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 2 Token <COMMA> Lexeme , found.
+Line No: 2 Token <CONST_INT> Lexeme 12 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,
+1
+2
+3
+4
+5
+6
+Line No: 2 Token <ID> Lexeme abcd found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 2 Token <SEMICOLON> Lexeme ; found.
+Error at Line No: 3: Unrecognized character `
+Line No: 4 Token <ID> Lexeme a found.
+Variablea already exists in the symbol table 
+Line No: 4 Token <ASSIGNOP> Lexeme = found.
+Line No: 4 Token <CONST_INT> Lexeme 5 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,
+1
+2
+3
+4
+5
+6
+Line No: 4 Token <SEMICOLON> Lexeme ; found.
+Line No: 5 Token <ID> Lexeme b found.
+Variableb already exists in the symbol table 
+Line No: 5 Token <ASSIGNOP> Lexeme = found.
+Line No: 5 Token <ID> Lexeme a found.
+Variablea already exists in the symbol table 
+Line No: 5 Token <MULOP> Lexeme * found.
+Line No: 5 Token <CONST_FLOAT> Lexeme 3.5140 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,-><3.5140><CONST_FLOAT> ,
+1
+2
+3
+4
+5
+6
+Line No: 5 Token <SEMICOLON> Lexeme ; found.
+Line No: 6 Token <ID> Lexeme b found.
+Variableb already exists in the symbol table 
+Line No: 6 Token <ASSIGNOP> Lexeme = found.
+Line No: 6 Token <CONST_INT> Lexeme 1 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,-><3.5140><CONST_FLOAT> ,-><1><CONST_INT> ,
+1
+2
+3
+4
+5
+6
+Line No: 6 Token <ID> Lexeme E10 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,-><3.5140><CONST_FLOAT> ,-><1><CONST_INT> ,-><E10><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 6 Token <CONST_FLOAT> Lexeme .7 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,-><3.5140><CONST_FLOAT> ,-><1><CONST_INT> ,-><E10><ID> ,-><.7><CONST_FLOAT> ,
+1
+2
+3
+4
+5
+6
+Line No: 6 Token <SEMICOLON> Lexeme ; found.
+Line No: 7 Token <ID> Lexeme a found.
+Variablea already exists in the symbol table 
+Line No: 7 Token <ASSIGNOP> Lexeme = found.
+Line No: 7 Token <ID> Lexeme a found.
+Variablea already exists in the symbol table 
+Line No: 7 Token <ADDOP> Lexeme + found.
+Line No: 7 Token <CONST_INT> Lexeme 1 found.
+Variable1 already exists in the symbol table 
+Line No: 7 Token <SEMICOLON> Lexeme ; found.
+Line No: 8 Token <CHAR> Lexeme char found.
+Line No: 8 Token <ID> Lexeme ch found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,-><3.5140><CONST_FLOAT> ,-><1><CONST_INT> ,-><E10><ID> ,-><.7><CONST_FLOAT> ,-><ch><ID> ,
+1
+2
+3
+4
+5
+6
+Line No: 8 Token <ASSIGNOP> Lexeme = found.
+Error at Line No: 8: Unfinished character 'a
+Error at Line No: 8: Unfinished character ';
+Line No: 8 Token <COMMENT> Lexeme // initializing found.
+Line No: 9 Token <COMMENT> Lexeme /*hello abc
+	def
+	ghi*/ found.
+Line No: 10 Token <RETURN> Lexeme return found.
+Line No: 10 Token <CONST_INT> Lexeme 0 found.
+0-><main><ID> ,-><a><ID> ,-><b><ID> ,-><abdc1><ID> ,-><12><CONST_INT> ,-><abcd><ID> ,-><5><CONST_INT> ,-><3.5140><CONST_FLOAT> ,-><1><CONST_INT> ,-><E10><ID> ,-><.7><CONST_FLOAT> ,-><ch><ID> ,-><0><CONST_INT> ,
+1
+2
+3
+4
+5
+6
+Line No: 10 Token <SEMICOLON> Lexeme ; found.
+Line No: 11 Token <RCURL> Lexeme } found.
