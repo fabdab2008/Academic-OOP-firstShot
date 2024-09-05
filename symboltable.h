@@ -96,25 +96,18 @@ public:
   }}
 
 
-  void print(ofstream &file2) {
-
+  void print(ofstream &logFile) {
     for (int i = 0; i < 7; i++) {
+        logFile << i;  // Writing the bucket index
 
-      file2 << i;
+        for (int j = 0; j < arr[i].size(); j++) {
+            logFile << " -> <" << arr[i][j].get_name() << "," << arr[i][j].get_type() << ">";  // Writing the symbols
+        }
 
-
-      string p = to_string(i);
-
-
-      for (int j = 0; j < arr[i].size(); j++) {
-
-        file2 << "->" << "<" << arr[i][j].get_name() << ">" << "<"
-             << arr[i][j].get_type() << ">" << " ,";
-      }
-
-      file2 << endl;
+        logFile << endl;
     }
-  }
+}
+
 };
 
 
