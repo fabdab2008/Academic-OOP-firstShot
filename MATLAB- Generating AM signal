@@ -1,0 +1,45 @@
+### MATLAB Code to Generate and Plot AM Signal:
+
+matlab
+% Parameters
+Fc = 1000;         % Carrier frequency in Hz
+Fm = 10;           % Message signal frequency in Hz
+Fs = 10000;        % Sampling frequency in Hz
+t = 0:1/Fs:1-1/Fs; % Time vector for 1 second
+Am = 1;            % Amplitude of message signal
+Ac = 1;            % Amplitude of carrier signal
+
+% Message signal (sine wave)
+message_signal = Am * sin(2 * pi * Fm * t);
+
+% Carrier signal (cosine wave)
+carrier_signal = Ac * cos(2 * pi * Fc * t);
+
+% Modulation Index (adjust for amplitude modulation depth)
+modulation_index = 0.5;
+
+% Amplitude Modulated Signal (AM)
+am_signal = (1 + modulation_index * message_signal) .* carrier_signal;
+
+% Plotting the signals
+figure;
+subplot(3,1,1);
+plot(t, message_signal);
+title('Message Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+subplot(3,1,2);
+plot(t, carrier_signal);
+title('Carrier Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+subplot(3,1,3);
+plot(t, am_signal);
+title('AM Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
