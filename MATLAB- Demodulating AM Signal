@@ -1,0 +1,22 @@
+% Demodulation using envelope detection
+am_signal_rectified = abs(am_signal);  % Rectifying the AM signal (Envelope detection)
+
+% Low-pass filter to extract the message signal
+[b, a] = butter(6, Fm*2/Fs);           % Designing a Butterworth filter with cutoff Fm*2/Fs
+demodulated_signal = filtfilt(b, a, am_signal_rectified);  % Apply low-pass filter
+
+% Plotting the demodulated signal
+figure;
+subplot(2,1,1);
+plot(t, am_signal_rectified);
+title('Rectified AM Signal (Envelope)');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+subplot(2,1,2);
+plot(t, demodulated_signal);
+title('Demodulated Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
