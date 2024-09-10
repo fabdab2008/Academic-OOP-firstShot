@@ -1,0 +1,13 @@
+% Delta Demodulation
+reconstructed_signal = zeros(size(dm_signal)); % Initialize the reconstructed signal
+for n = 2:length(dm_signal)
+    reconstructed_signal(n) = reconstructed_signal(n-1) + dm_signal(n);  % Integrating the DM signal
+end
+
+% Plotting the demodulated signal
+figure;
+plot(t, reconstructed_signal);
+title('Demodulated Signal (Reconstructed from Delta Modulation)');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
