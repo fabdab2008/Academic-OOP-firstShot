@@ -1,0 +1,45 @@
+% Parameters
+Fc = 1000;         % Carrier frequency in Hz
+Fm = 100;          % Message signal frequency in Hz
+Fs = 10000;        % Sampling frequency in Hz
+t = 0:1/Fs:1-1/Fs; % Time vector for 1 second
+Am = 1;            % Amplitude of message signal
+delta = 0.1;       % Step size for delta modulation
+
+% Message signal (sine wave)
+message_signal = Am * sin(2 * pi * Fm * t);
+
+% Delta Modulation
+x_hat = zeros(size(message_signal));  % Reconstructed signal
+dm_signal = zeros(size(message_signal));  % Delta modulated signal
+for n = 2:length(message_signal)
+    if message_signal(n) > x_hat(n-1)
+        dm_signal(n) = delta;         % Step up
+    else
+        dm_signal(n) = -delta;        % Step down
+    end
+    x_hat(n) = x_hat(n-1) + dm_signal(n);  % Reconstruct the signal
+end
+
+% Plotting the signals
+figure;
+subplot(3,1,1);
+plot(t, message_signal);
+title('Message Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+subplot(3,1,2);
+stairs(t, dm_signal);  % Use stairs for discrete step plotting
+title('Delta Modulated Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+subplot(3,1,3);
+plot(t, x_hat);
+title('Reconstructed Signal (From Delta Modulation)');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
