@@ -1,0 +1,22 @@
+% FM Demodulation using differentiator and envelope detection
+fm_demodulated = diff(unwrap(angle(fm_signal))); % Differentiate the phase
+
+% Normalize and low-pass filter the demodulated signal
+[b, a] = butter(6, Fm*2/Fs);                     % Low-pass filter to extract message
+demodulated_signal = filtfilt(b, a, fm_demodulated);
+
+% Plotting the demodulated signal
+figure;
+subplot(2,1,1);
+plot(t(1:end-1), fm_demodulated);
+title('FM Demodulated Signal (Phase Differentiated)');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
+
+subplot(2,1,2);
+plot(t(1:end-1), demodulated_signal);
+title('Recovered Message Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+grid on;
